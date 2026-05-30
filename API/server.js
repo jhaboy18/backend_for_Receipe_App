@@ -9,7 +9,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 const app = express();
 
-// ✅ Body parser
+//
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -21,12 +21,12 @@ app.use(cors({
   
 ))
 
-// ✅ Router
+//
 app.use('/api', userrouter);
 //receipe router
 app.use('/api',receiperrouter)
 
-// ✅ DB connect
+//
 mongoose.connect(process.env.MONGO_URL
   ,
   { dbName: "Mern" }
